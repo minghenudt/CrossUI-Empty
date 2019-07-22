@@ -34,12 +34,12 @@ xui.Class('App', 'xui.Module',{
                 .setHost(host,"xui_svg_circle1")
                 .setSvgTag("Shapes:Circle")
                 .setAttr({
+                    "cx":150,
+                    "cy":110,
                     "r":20,
                     "stroke":"#004A7F",
                     "fill":"#ffffff",
-                    "stroke-width":2,
-                    "cx":150,
-                    "cy":110
+                    "stroke-width":2
                 })
             );
             
@@ -60,10 +60,29 @@ xui.Class('App', 'xui.Module',{
                 .setHost(host,"xui_svg_image1")
                 .setAttr({
                     "src":"{xui.ini.img_pic}",
-                    "width":100,
-                    "height":100,
                     "x":290,
-                    "y":170
+                    "y":170,
+                    "width":100,
+                    "height":100
+                })
+            );
+            
+            host.xui_ui_svgpaper1.append(
+                xui.create("xui.svg.pathComb")
+                .setHost(host,"xui_svg_pathcomb1")
+                .setSvgTag("FlowChart:Delay")
+                .setAttr({
+                    "KEY":{
+                        "stroke":"#004A7F",
+                        "fill":"90-#5198D3-#A1C8F6",
+                        "path":"M,150,250L,210,250L,210,250C,243.1371,250,270,270.14725000000004,270,295C,270,319.85274999999996,243.1371,340,210,340L,150,340Z"
+                    },
+                    "TEXT":{
+                        "fill":"#fff",
+                        "font-size":"12px",
+                        "font-weight":"bold",
+                        "text":"Delay"
+                    }
                 })
             );
             
