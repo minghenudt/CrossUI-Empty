@@ -30,63 +30,6 @@ xui.Class('App', 'xui.Module',{
             );
             
             host.xui_ui_svgpaper1.append(
-                xui.create("xui.svg.circle")
-                .setHost(host,"xui_svg_circle1")
-                .setSvgTag("Shapes:Circle")
-                .setAttr({
-                    "cx":50,
-                    "cy":70,
-                    "r":20,
-                    "stroke":"#004A7F",
-                    "fill":"#ffffff",
-                    "stroke-width":2
-                })
-            );
-            
-            host.xui_ui_svgpaper1.append(
-                xui.create("xui.svg.path")
-                .setHost(host,"xui_svg_path1")
-                .setSvgTag("Shapes:Line")
-                .setAttr({
-                    "path":"M,60,60L,180,130",
-                    "stroke":"#004A7F",
-                    "fill":"#ffffff",
-                    "stroke-width":2
-                })
-            );
-            
-            host.xui_ui_svgpaper1.append(
-                xui.create("xui.svg.image")
-                .setHost(host,"xui_svg_image1")
-                .setAttr({
-                    "src":"{xui.ini.img_pic}",
-                    "x":180,
-                    "y":150,
-                    "width":100,
-                    "height":100
-                })
-            );
-            
-            host.xui_ui_svgpaper1.append(
-                xui.create("xui.svg.pathComb")
-                .setHost(host,"xui_svg_pathcomb1")
-                .setSvgTag("FlowChart:Delay")
-                .setAttr({
-                    "KEY":{
-                        "stroke":"#004A7F",
-                        "fill":"90-#5198D3-#A1C8F6",
-                        "path":"M,20,170L,80,170L,80,170C,113.1371,170,140,190.14725000000004,140,215C,140,239.85274999999996,113.1371,260,80,260L,20,260Z"
-                    },
-                    "TEXT":{
-                        "fill":"#fff",
-                        "font-size":"12px",
-                        "font-weight":"bold",
-                        "text":"Delay"
-                    }
-                })
-            );
-            
-            host.xui_ui_svgpaper1.append(
                 xui.create("xui.UI.FusionChartsXT")
                 .setHost(host,"xui_ui_fusionchartsxt1")
                 .setLeft("33.333333333333336em")
@@ -211,6 +154,132 @@ xui.Class('App', 'xui.Module',{
                                     "color":"FF9FFF"
                                 }
                             ]
+                        }
+                    ]
+                })
+            );
+            
+            host.xui_ui_svgpaper1.append(
+                xui.create("xui.svg.circle")
+                .setHost(host,"xui_svg_circle1")
+                .setSvgTag("Shapes:Circle")
+                .setAttr({
+                    "cx":50,
+                    "cy":70,
+                    "r":20,
+                    "stroke":"#004A7F",
+                    "fill":"#ffffff",
+                    "stroke-width":2
+                })
+            );
+            
+            host.xui_ui_svgpaper1.append(
+                xui.create("xui.svg.path")
+                .setHost(host,"xui_svg_path1")
+                .setSvgTag("Shapes:Line")
+                .setAttr({
+                    "path":"M,60,60L,180,130",
+                    "stroke":"#004A7F",
+                    "fill":"#ffffff",
+                    "stroke-width":2
+                })
+            );
+            
+            host.xui_ui_svgpaper1.append(
+                xui.create("xui.svg.image")
+                .setHost(host,"xui_svg_image1")
+                .setAttr({
+                    "src":"{xui.ini.img_pic}",
+                    "x":180,
+                    "y":150,
+                    "width":100,
+                    "height":100
+                })
+            );
+            
+            host.xui_ui_svgpaper1.append(
+                xui.create("xui.svg.pathComb")
+                .setHost(host,"xui_svg_pathcomb1")
+                .setSvgTag("FlowChart:Delay")
+                .setAttr({
+                    "KEY":{
+                        "stroke":"#004A7F",
+                        "fill":"90-#5198D3-#A1C8F6",
+                        "path":"M,20,170L,80,170L,80,170C,113.1371,170,140,190.14725000000004,140,215C,140,239.85274999999996,113.1371,260,80,260L,20,260Z"
+                    },
+                    "TEXT":{
+                        "fill":"#fff",
+                        "font-size":"12px",
+                        "font-weight":"bold",
+                        "text":"Delay"
+                    }
+                })
+            );
+            
+            append(
+                xui.create("xui.UI.ECharts")
+                .setHost(host,"xui_ui_echarts1")
+                .setLeft("35.833333333333336em")
+                .setTop("25.833333333333332em")
+                .setChartOption({
+                    "title":{
+                        "text":"Visitor Statistics",
+                        "subtext":"Fake data",
+                        "x":"center"
+                    },
+                    "tooltip":{
+                        "trigger":"item",
+                        "formatter":"{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    "legend":{
+                        "orient":"vertical",
+                        "left":"left",
+                        "data":[
+                            "Direct",
+                            "Email",
+                            "Alliance",
+                            "Video",
+                            "Search"
+                        ]
+                    },
+                    "series":[
+                        {
+                            "name":"Visitor Statistics",
+                            "type":"pie",
+                            "radius":"55%",
+                            "center":[
+                                "50%",
+                                "60%"
+                            ],
+                            "data":[
+                                {
+                                    "value":335,
+                                    "name":"Direct"
+                                },
+                                {
+                                    "value":310,
+                                    "name":"Email"
+                                },
+                                {
+                                    "value":234,
+                                    "name":"Alliance"
+                                },
+                                {
+                                    "value":135,
+                                    "name":"Video"
+                                },
+                                {
+                                    "value":1548,
+                                    "name":"Search"
+                                }
+                            ],
+                            "itemStyle":{
+                                "emphasis":{
+                                    "shadowBlur":10,
+                                    "shadowOffsetX":0,
+                                    "shadowColor":"rgba(0, 0, 0, 0.5)"
+                                }
+                            }
                         }
                     ]
                 })
